@@ -3,6 +3,8 @@ package hello.hellospring.services;
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,10 +12,10 @@ import java.util.Optional;
 public class MemberService {
     private final MemberRepository memberRepository;
 
+
     public MemberService(MemberRepository memberRepository){
         this.memberRepository = memberRepository;
     }
-
 
     public Long join(Member member){
         //중복 이름 회원 허용 X
