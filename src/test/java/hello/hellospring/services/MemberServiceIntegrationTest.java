@@ -24,7 +24,7 @@ class MemberServiceIntegrationTest {
     void 회원가입() {
         //given
         Member member = new Member();
-        member.setName("doyoung");
+        member.setName("spring");
         //when
         Long saveId = memberService.join(member);
         //then
@@ -38,10 +38,10 @@ class MemberServiceIntegrationTest {
     public void 중복회원체크(){
         //given
         Member member1 = new Member();
-        member1.setName("doyung");
+        member1.setName("1234");
 
         Member member2 = new Member();
-        member2.setName("doyung");
+        member2.setName("1234");
         //when
         memberService.join(member1);
         IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));
